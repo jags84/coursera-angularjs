@@ -1,7 +1,7 @@
 (function (){
   'use string';
   // App
-  angular.module("ShoppingList",[])
+  angular.module("ShoppingListCheckOff",[])
   // Controller
   .controller('ToBuyController', ToBuyController)
   .controller('AlreadyBoughtController', AlreadyBoughtController)
