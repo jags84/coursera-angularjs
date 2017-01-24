@@ -33,6 +33,7 @@
         promise.then(function(response){
           menu.found = response;
           if(menu.found.length == 0){
+            menu.food = ''
             menu.error = true;
           }
         }).
