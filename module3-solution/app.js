@@ -42,6 +42,7 @@
         })
       }else{
         menu.error = true;
+        menu.food = '';
       }
       menu.removeItem = function (itemIndex){
         menu.found.splice(itemIndex, 1);
