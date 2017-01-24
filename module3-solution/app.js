@@ -61,7 +61,7 @@
       }).then(function(results){
         var foundItems = [];
         angular.forEach(results.data.menu_items,function(value,key){
-          if (value.description.toLowerCase().indexOf(food) !== -1) {
+          if (value.description.toLowerCase().indexOf(food.toLowerCase()) !== -1) {
             // Add Item if found
             foundItems.push(value);
           }
