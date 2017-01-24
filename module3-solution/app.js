@@ -25,13 +25,16 @@
     var menu = this;
     menu.food = ''
     menu.findFood = function(){
-
+      // Set error to false
+      menu.error = false;
       // Verify if food is empty
       if(menu.food.length != 0){
         var promise = MenuSearchService.getMatchedMenuItems(menu.food)
         promise.then(function(response){
           menu.found = response;
-          menu.error = false;
+          if(menu.found.length == 0){
+            menu.error = true;
+          }
         }).
         catch(function(error){
           console.log("Error on service")
