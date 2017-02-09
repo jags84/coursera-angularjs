@@ -1,0 +1,30 @@
+<div style="width: 300px;height: 500px;margin: 0 auto;"ng-controller="MyinfoController as myinfo">
+  <div class="error" ng-if='myinfo.reg' >
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div ng-if='!myinfo.reg'>
+    <div>
+      {{myinfo.user.first_name}}
+      <br/>
+      {{myinfo.user.last_name}}
+      <br/>
+      {{myinfo.user.email}}
+      <br/>
+      {{myinfo.user.phone}}
+      <br/>
+      {{myinfo.user.dish_number}}
+      <br/>
+    </div>
+    <div>
+      <a ui-sref="public.menuitems({category: myinfo.dish_number})">
+        <div class="category-tile">
+          <img width="200" height="200" ng-src="images/menu/{{myinfo.dish.category_short_name}}/{{myinfo.dish.category_short_name}}.jpg" alt="{{myinfo.dish_number}}">
+          <span>{{myinfo.dish.name}}</span>
+        </div>
+      </a>
+      <div>
+        {{myinfo.dish.description}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div style="width: 300px;margin: 0 auto;">
+  <h1>Sign Up</h1>
+  <fieldset ng-controller="SignupController as reg">
+    <form name='regForm' novalidate >
+      <!-- First Name -->
+      <div class="form-group">
+        <input type="text" name="first_name" class="form-control" placeholder="First Name" ng-model="reg.user.first_name" required >
+          <span ng-if="(regForm.first_name.$error.required) && regForm.first_name.$touched">
+            You most provide your First Name
+          </span>
+      </div>
+
+      <!-- Last Name -->
+      <div class="form-group">
+        <input type="text" name="last_name" class="form-control" placeholder="Last Name" ng-model="reg.user.last_name" required>
+          <span ng-if="(regForm.last_name.$error.required) && regForm.last_name.$touched">
+            You most provide your Last Name
+          </span>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" class="form-control" ng-model="reg.user.email" required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+      <input type="text" name="phone" placeholder="Phone ###-###-####" class="form-control" ng-model="reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+      </div>
+
+      <!-- Favorite Dish Number  -->
+      <div class="form-group">
+        <input type="text" name="dish_number" class="form-control" placeholder="Favorite Dish Number" ng-model="reg.user.dish_number" >
+        <div class="error" ng-if='reg.error' >
+          No such menu number exists
+        </div>
+      </div>
+
+      <!-- Button -->
+      <button ng-disabled="regForm.$invalid" ng-click="reg.register_user()" class="btn btn-default">Submit</button>
+      <div class="error" ng-if='reg.sucess' >
+        Your information has been saved
+      </div>
+    </form>
+  </fieldset>
+</div>
