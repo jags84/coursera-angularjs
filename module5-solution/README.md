@@ -19,3 +19,6 @@ If everything is valid, save the user's preference somewhere in your client app 
 When the user clicks on `My Info` button, they should be taken to another view where it shows them their "registered" information, including the favorite menu item they picked. When showing the favorite menu item, display the picture of the menu item as well as its title and description.
 
 If the user hasn't yet "registered" through the `Sign Up` button, simply display a message saying: `Not Signed Up Yet. Sign up Now!`. The words "Sign up Now!" should be a link to the same view as the `Sign Up` link points to.
+
+###Solution
+View [Assignment Solution](https://jags84.github.io/coursera-angularjs/module5-solution/)
